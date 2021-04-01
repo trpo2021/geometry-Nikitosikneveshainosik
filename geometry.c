@@ -1,9 +1,11 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 void correct_spelling(char* str, int max_symb);
 void cirlce_output(char* str);
+void perimeter_and_area(char* str, int max_symb);
 
 int main()
 {
@@ -13,6 +15,7 @@ int main()
     fgets(sourse_str, max_symb, mf);
     correct_spelling(sourse_str, max_symb);
     cirlce_output(sourse_str);
+    perimeter_and_area(sourse_str, max_symb);
     return 0;
 }
 
@@ -35,4 +38,23 @@ void correct_spelling(char* str, int max_symb)
 void cirlce_output(char* str)
 {
     fputs(str, stdout);
+}
+
+void perimeter_and_area(char* str, int max_symb)
+{
+    int r = 0;
+    int i, k;
+    char radius[10];
+    float area, perimeter;
+    for (i = 0; i < max_symb; i++) {
+        if ((str[i] == ',') && (str[i + 1] == ' ')) {
+            for (k = i; str[k + 1] != max_symb + 1; k++) {
+                radius[k - i] = str[k + 1];
+            }
+        };
+    }
+    r = atoi(radius);
+    area = M_PI * r * r;
+    perimeter = 2 * M_PI * r;
+    printf("area = %.3f\nperimeter = %.3f\n", area, perimeter);
 }
