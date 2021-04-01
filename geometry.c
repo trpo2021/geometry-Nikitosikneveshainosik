@@ -3,6 +3,7 @@
 #include <string.h>
 
 void correct_spelling(char* str, int max_symb);
+void cirlce_output(char* str);
 
 int main()
 {
@@ -11,6 +12,7 @@ int main()
     char sourse_str[max_symb];
     fgets(sourse_str, max_symb, mf);
     correct_spelling(sourse_str, max_symb);
+    cirlce_output(sourse_str);
     return 0;
 }
 
@@ -28,4 +30,9 @@ void correct_spelling(char* str, int max_symb)
         printf("\"%s\" Not found\nDid you mean \"circle\"?\n", object_str);
         exit(0);
     };
+}
+
+void cirlce_output(char* str)
+{
+    fputs(str, stdout);
 }
