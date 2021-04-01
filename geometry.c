@@ -18,7 +18,7 @@ int main()
 
 void correct_spelling(char* str, int max_symb)
 {
-    char check_str[] = {'c', 'i', 'r', 'c', 'l', 'e'};
+    char check_str[] = {'c', 'i', 'r', 'c', 'l', 'e', ' '};
     char object_str[max_symb];
     int i, j;
     for (i = 0; str[i] != 40; i++) {
